@@ -1,8 +1,22 @@
+
+
 <h1>eventos</h1>
 <button [disabled]="btnDisabled" >boton</button>
 <button (click)="toggleButton()">Toggle button</button>
 <p>Edad {{ person.age }}</p>
 <button (click)="increaseAge()">Edad ++</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    Velit, vero ipsam fugiat ab cupiditate voluptates nihil suscipit laborum nemo molestias et exercitationem
+    dolore dolor veritatis. Sequi pariatur exercitationem est fugit.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Illo dolor inventore id aliquam ducimus explicabo qui quas reiciendis.
+    Reiciendis suscipit dolor assumenda natus temporibus fugit est, corporis aperiam beatae eum.
+  </p>
+</div>
+<p>Nombre {{person.name}}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)" >
 
 
 <hr />
