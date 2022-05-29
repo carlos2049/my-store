@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-store';
+  name = 'carloss';
+  age = 30
+  img = 'https://www.fundacion-affinity.org/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  btnDisabled = true
+  person = {
+    name: 'mateo',
+    age: 18,
+    avatar: 'https://www.fundacion-affinity.org/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
+  }
+  toggleButton() {
+    this.btnDisabled = !this.btnDisabled
+  }
+  increaseAge() {
+    this.person.age += 1
+  }
 }
