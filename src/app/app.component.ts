@@ -15,6 +15,10 @@ export class AppComponent {
     age: 18,
     avatar: 'https://www.fundacion-affinity.org/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
   }
+
+  names: string[] = ['carlos', 'esteban', 'marco']
+  newName = ''
+
   toggleButton() {
     this.btnDisabled = !this.btnDisabled
   }
@@ -32,4 +36,12 @@ export class AppComponent {
     // console.log(element.value);
 
   }
+  addName() {
+    this.names.push(this.newName)
+    this.newName = ''
+  }
+  deleteName(i: number) {
+    this.names.splice(i, 1)
+  }
+
 }
