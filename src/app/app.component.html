@@ -1,4 +1,11 @@
-<h1>Formulario</h1>
+<input type="text" [(ngModel)]="imgParent">
+<app-img [img]="imgParent" ></app-img>
+
+
+
+
+
+<!-- <h1>Formulario</h1>
 
 <form  #myForm="ngForm" (ngSubmit)="onRegister()">
   <div class="input-group">
@@ -80,14 +87,16 @@
   <p *ngSwitchCase="'alfonso'">soy alfonso</p>
   <p *ngSwitchCase="'marco'">soy marco</p>
   <p *ngSwitchDefault>no hace mach</p>
-</div>
+</div> -->
+
+
 <!-- <p *ngIf="person.name === 'carlos'">soy carlos</p>
 <p *ngIf="person.name === 'alfonso'">soy alfonso</p>
 <p *ngIf="person.name === 'marco'">soy marco</p> -->
 
 
 
-<hr>
+<!-- <hr>
 
 <h1>ngFor Objs</h1>
 <div class="products--grid">
@@ -169,4 +178,4 @@
 <h2>{{'hola mundo'.repeat(5)}}</h2>
 <p>{{3+3}}</p>
 <h3>hola, soy {{ name}} y tengo {{age}}</h3>
-<img src={{img}} alt="image" width="200">
+<img src={{img}} alt="image" width="200"> -->

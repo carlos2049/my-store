@@ -7,6 +7,7 @@ import { Product } from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  imgParent = 'https://www.fundacion-affinity.org/sites/default/files/los-10-sonidos-principales-del-perro.jpg'
   widthImg = 10
   name = 'carloss';
   age = 30
