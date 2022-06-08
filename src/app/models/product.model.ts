@@ -2,7 +2,12 @@ export interface IProduct {
   id: string,
   title: string,
   price: number,
-  image: string,
+  images: string[],
   description: string,
-  catogory: string
+  catogory: ICategory
+}
+
+interface ICategory {
+  id: string,
+  name: string
 }
