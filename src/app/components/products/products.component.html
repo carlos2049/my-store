@@ -28,7 +28,9 @@
     <swiper
       [slidesPerView]="1"
     >
-      <ng-template swiperSlide>slide 1</ng-template>
+      <ng-template swiperSlide *ngFor="let img of productChosen.images">
+        <img [src]="img" alt="">
+      </ng-template>
     </swiper>
     <h1>{{productChosen.description}}</h1>
   </div>
