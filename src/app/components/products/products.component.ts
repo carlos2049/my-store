@@ -66,6 +66,8 @@ export class ProductsComponent implements OnInit {
   }
 
   createNewProduct(){
+    console.log('mna');
+    
     const product: createProductDTO = {
       title: 'nuevo productos',
       description: 'jii',
