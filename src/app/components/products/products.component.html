@@ -16,6 +16,7 @@
 <p>
   {{ 'hOLA Bascass' | uppercase }}
 </p>
+<button (click)="createNewProduct()">crear</button>
 <div class="products--grid">
   <app-product [product]="product" *ngFor=" let product of products" (addedProduct)="onAddToShoppingcart($event)"
     (showProduct)="onShowDetail($event)">
@@ -35,4 +36,3 @@
     <h1>{{productChosen.description}}</h1>
   </div>
 </div>
-<button (click)="toggleProductDetail()">click</button>
