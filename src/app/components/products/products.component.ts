@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct, createProductDTO } from '../../models/product.model'
+import { IProduct, createProductDTO, IUpdateProduct } from '../../models/product.model'
 import { StoreService } from '../../services/store.service'
 import { ProductsService } from '../../services/products.service'
 
@@ -65,9 +65,9 @@ export class ProductsComponent implements OnInit {
       })
   }
 
-  createNewProduct(){
+  createNewProduct() {
     console.log('mna');
-    
+
     const product: createProductDTO = {
       title: 'nuevo productos',
       description: 'jii',
@@ -75,8 +75,34 @@ export class ProductsComponent implements OnInit {
       price: 1000,
       categoryId: 1
     }
-    this.productsService.create(product).subscribe(data=>{
-      this.products.unshift(data)
+    this.productsService.create(product).subscribe({
+      next: (_data) => {
+        this.products.unshift(_data)
+      },
+      error: (err) => {
+        console.log('jje');
+
+      },
+    }
+    )
+  }
+
+  updateProduct(){
+
+    const changes : IUpdateProduct = {
+      title: 'nuevo titulo2'
+    }
+    const id = this.productChosen.id
+    this.productsService.update(id,changes).subscribe({
+      next:(data: any)=>{
+        const product = this.products.findIndex(x=> x.id === this.productChosen.id)
+        this.products[product] = data
+        
+      },
+      error:(err)=>{
+        console.log('updateError', err);
+        
+      }
     })
   }
 
