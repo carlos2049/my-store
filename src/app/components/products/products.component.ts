@@ -39,7 +39,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.getAllProducts()
       .subscribe(data => {
-        // console.log(data);
         this.products = data
 
       })
@@ -95,8 +94,9 @@ export class ProductsComponent implements OnInit {
     const id = this.productChosen.id
     this.productsService.update(id,changes).subscribe({
       next:(data: any)=>{
-        const product = this.products.findIndex(x=> x.id === this.productChosen.id)
+        const product = this.products.findIndex(x=> x.id === data.id)
         this.products[product] = data
+        this.productChosen = data
         
       },
       error:(err)=>{
